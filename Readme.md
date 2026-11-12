@@ -18,6 +18,23 @@ Using data analytics and exploratory data analysis (EDA), this project aims to i
 
 The objective is not just to understand how many charging stations exist, but also to investigate whether charging infrastructure is developing in alignment with the growing demand for electric vehicles.
 
+## 📊 Interactive Tableau Dashboard
+
+Explore the interactive Tableau Public dashboard to understand India's EV charging infrastructure landscape.
+
+Live Dashboard
+
+🔗 View Interactive Dashboard on Tableau Public
+
+Dashboard Preview
+
+1. Is the build-out catching up?
+(/Users/mudraberde/Documents/india-ev-charging-gap/images/Is the build-out catching up_.png)
+
+
+2. Where is charging stretched?
+(/Users/mudraberde/Documents/india-ev-charging-gap/images/Where is charging stretched.png)
+
 ## 🎯 Project Objectives
 
 - Analyse the distribution of EV charging infrastructure across Indian states and regions.
