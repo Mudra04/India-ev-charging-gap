@@ -28,12 +28,12 @@ Live Dashboard
 
 Dashboard Preview
 
-1. Is the build-out catching up?
-(/Users/mudraberde/Documents/india-ev-charging-gap/images/Is the build-out catching up_.png)
+1. Is the build-out catching up? 
+(images/Is the build-out catching up_.png)
 
 
 2. Where is charging stretched?
-(/Users/mudraberde/Documents/india-ev-charging-gap/images/Where is charging stretched.png)
+(images/Where is charging stretched.png)
 
 ## 🎯 Project Objectives
 
