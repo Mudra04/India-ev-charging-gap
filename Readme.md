@@ -1,181 +1,137 @@
-# 🇮🇳 India EV Charging Gap Analysis
+# India EV Adoption & Charging Gap Analysis
 
-### An Exploratory Data Analytics Project on India's Electric Vehicle Charging Infrastructure
+**Where is public EV charging falling behind EV adoption in India?** A state-by-state analysis of 3.6 million registered EVs and 27,737 public charging stations, using Python, SQL (SQLite) and Tableau.
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+**Live dashboard:** [View on Tableau Public](PASTE-YOUR-TABLEAU-PUBLIC-LINK-HERE)
+**Case study:** [docs/CASE_STUDY.md](docs/CASE_STUDY.md) | **Data sources and limits:** [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)
 
-## 📌 Project Overview
+## Dashboard preview
 
-India's electric vehicle (EV) market is growing, but the availability and distribution of charging infrastructure remain important challenges for widespread EV adoption.
-
-The **India EV Charging Gap Analysis** project explores the relationship between electric vehicle adoption and the availability of charging infrastructure across India.
-
-Using data analytics and exploratory data analysis (EDA), this project aims to identify infrastructure gaps, understand regional disparities, and generate meaningful insights that can support better infrastructure planning and data-driven decision-making.
-
-The objective is not just to understand how many charging stations exist, but also to investigate whether charging infrastructure is developing in alignment with the growing demand for electric vehicles.
-
-## 📊 Interactive Tableau Dashboard
-
-Explore the interactive Tableau Public dashboard to understand India's EV charging infrastructure landscape.
-
-Live Dashboard
-
-🔗 View Interactive Dashboard on Tableau Public
-
-Dashboard Preview
-
-1. Is the build-out catching up? 
-(images/Is the build-out catching up_.png)
-
-
-2. Where is charging stretched?
-(images/Where is charging stretched.png)
-
-## 🎯 Project Objectives
-
-- Analyse the distribution of EV charging infrastructure across Indian states and regions.
-- Examine the relationship between EV adoption and charging station availability.
-- Identify potential gaps in charging infrastructure.
-- Understand regional differences in EV infrastructure development.
-- Explore trends and patterns using data visualization.
-- Generate insights that can support infrastructure planning and policy decisions.
-
-## 🔍 Key Areas of Analysis
-
-| Analysis Area | Purpose |
+| Where is charging stretched? | Is the build-out catching up? |
 |---|---|
-| EV Adoption Analysis | Understand EV adoption patterns across regions. |
-| Charging Infrastructure | Examine the availability and distribution of charging stations. |
-| Regional Comparison | Compare infrastructure development across states. |
-| Infrastructure Gap | Explore differences between EV demand and charging availability. |
-| Data Visualization | Present findings through meaningful charts and visual representations. |
+| ![Where is charging stretched](dashboard/screenshots/01_where_is_charging_stretched.png) | ![Is the build-out catching up](dashboard/screenshots/02_is_buildout_catching_up.png) |
 
-## 🛠️ Technology Stack
+## Questions and short answers
 
-- **Python** – Data analysis and processing.
-- **Pandas** – Data cleaning, manipulation and analysis.
-- **NumPy** – Numerical operations.
-- **Matplotlib** – Data visualization.
-- **Jupyter Notebook** – Interactive analysis and experimentation.
-- **SQL** – Structured data querying and analysis.
+| Question | Short answer |
+|---|---|
+| Which states have the most EVs per charging station? | Delhi (about 940), Bihar (554), Assam (429), Maharashtra (392) and Goa (370). The national figure is 254. |
+| Which states combine high EV adoption with thin charging? | Ten "priority gap" states: Delhi, Bihar, Assam, Maharashtra, Goa, Tripura, Uttar Pradesh, Kerala, Uttarakhand and Karnataka. |
+| Did stations installed later fix this? | Not in the biggest markets. Uttar Pradesh has 18.3% of EVs but received 10.1% of stations installed after March 2024. Bihar: 5.9% of EVs, 3.1% of new stations. Assam: 4.1% and 1.5%. |
+| How concentrated is it? | The five states with the most EVs hold 52.7% of EVs but 47.2% of stations. |
+| How fast is the network growing? | From 290 stations installed in FY2020-21 to 10,516 in FY2024-25. |
+| Are the stations working? | Puducherry has only 41% of its stations operational (24 of 58), Meghalaya 55%, Jammu & Kashmir 64%. Tamil Nadu has the most non-operational stations of any state: 609 of 2,286 (73% operational). |
 
-## 📂 Repository Structure
+## Key findings
 
-```text
-India-ev-charging-gap/
-│
-├── data/                  # Project datasets
-│
-├── docs/                  # Project documentation
-│
-├── notebooks/             # Exploratory data analysis
-│
-├── sql/                   # SQL queries and analysis
-│
-├── requirements.txt       # Python dependencies
-│
-└── README.md              # Project documentation
+### Charging pressure in the priority-gap states
+EVs registered April 2019 to March 2024, compared with charging stations installed up to the same date.
+
+| State | EVs | Stations | EVs per station | EVs as % of vehicles |
+|---|---|---|---|---|
+| Delhi | 216,084 | 230 | 939 | 7.7% |
+| Bihar | 214,921 | 388 | 554 | 3.7% |
+| Assam | 150,617 | 351 | 429 | 5.8% |
+| Maharashtra | 439,358 | 1,120 | 392 | 4.0% |
+| Goa | 20,330 | 55 | 370 | 6.3% |
+| Tripura | 20,113 | 55 | 366 | 7.6% |
+| Uttar Pradesh | 665,247 | 2,079 | 320 | 4.3% |
+| Kerala | 151,029 | 505 | 299 | 4.0% |
+| Uttarakhand | 48,522 | 165 | 294 | 4.3% |
+| Karnataka | 350,810 | 1,209 | 290 | 4.8% |
+| **National (35 states and UTs)** | **3,639,617** | **14,308** | **254** | **3.4%** |
+
+Goa and Tripura only just pass the 20,000-EV cut-off used in the analysis, so read their ratios with care.
+
+### Stations installed after March 2024 versus each state's share of EVs
+
+| State | Share of EVs | Share of new stations | Gap (points) | New stations |
+|---|---|---|---|---|
+| Uttar Pradesh | 18.3% | 10.1% | -8.2 | 1,205 |
+| Bihar | 5.9% | 3.1% | -2.8 | 374 |
+| Assam | 4.1% | 1.5% | -2.7 | 175 |
+| Maharashtra | 12.1% | 9.4% | -2.7 | 1,123 |
+| Delhi | 5.9% | 3.5% | -2.4 | 423 |
+
+Some states sped up: stations installed in Delhi rose from 100 in FY2023-24 to 344 in FY2024-25, Karnataka rose 116%, Punjab 109% and Bihar 100%.
+
+### Stations installed per year (all states except Telangana)
+
+| Year | Installed |
+|---|---|
+| FY2020-21 | 290 |
+| FY2021-22 | 2,246 |
+| FY2022-23 | 4,503 |
+| FY2023-24 | 7,269 |
+| FY2024-25 | 10,516 |
+| FY2025-26 (to 1 March 2026) | 1,410 |
+
+The sharp fall in FY2025-26 may reflect reporting timing or a real slowdown. The data cannot tell which, so it is not interpreted further.
+
+## How the analysis works
+
+1. **Two official government tables** (see `docs/DATA_SOURCES.md`) were transcribed to CSV and checked against the totals published in the same documents. Every total matched.
+2. **State names were standardised** and the tables merged (35 states and UTs).
+3. **Metrics were calculated:** EV penetration, EVs per station, each state's share of EVs and of stations, the gap between the two shares, and the share of working stations.
+4. **States were classified** (only those with at least 20,000 EVs, to avoid noise from tiny states):
+   - *High adoption*: EV penetration at or above the national 3.38%
+   - *Thinly served*: EVs per station at or above the national 254
+   - *Priority gap*: both
+5. **SQL queries** (SQLite) answer the main questions using CTEs, window functions (`RANK`, `LAG`, running totals), `CASE WHEN` pivots and subqueries. They are saved in [`sql/analysis_queries.sql`](sql/analysis_queries.sql).
+6. **A Tableau Public dashboard** presents the results.
+
+| Notebook | What it does |
+|---|---|
+| `01_prepare_and_analyse.ipynb` | Loads and verifies the data, standardises names, merges, calculates metrics, classifies states, draws charts, saves clean files |
+| `02_sql_analysis.ipynb` | Loads the clean files into SQLite and runs 8 queries |
+
+## Repository structure
+
+```
+india-ev-charging-gap/
+├── README.md
+├── requirements.txt
+├── docs/                  CASE_STUDY.md, DATA_SOURCES.md
+├── notebooks/             01 and 02
+├── sql/analysis_queries.sql
+├── data/
+│   ├── raw/               the two transcribed government tables
+│   └── clean/             ev_state_metrics.csv, charger_installs_by_year.csv
+└── dashboard/screenshots/
 ```
 
-## ⚙️ Installation & Setup
+## How to reproduce
 
-Follow these steps to run the project locally.
-
-**1. Clone the repository**
-
-```bash
-git clone https://github.com/Mudra04/India-ev-charging-gap.git
 ```
-
-**2. Navigate to the project directory**
-
-```bash
-cd India-ev-charging-gap
-```
-
-**3. Create a virtual environment (recommended)**
-
-```bash
-python -m venv venv
-```
-
-Activate it:
-
-For macOS/Linux:
-
-```bash
+python3 -m venv venv
 source venv/bin/activate
-```
-
-For Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-**4. Install the required dependencies**
-
-```bash
 pip install -r requirements.txt
 ```
 
-**5. Launch Jupyter Notebook**
+Open the folder in VS Code and run `notebooks/01_prepare_and_analyse.ipynb`, then `02_sql_analysis.ipynb`. The raw data is included.
 
-```bash
-jupyter notebook
-```
+## Limitations
 
-Open the relevant notebook inside the `notebooks/` directory to explore the analysis.
+- **Charging data covers Oil Marketing Company stations only** (27,737 installed). Other sources report about 52,718 charging stations in total as on 31 March 2026. States where private operators or state utilities built many chargers look more under-served here than they really are.
+- **EV registrations stop at 31 March 2024.** Stations are compared with EVs up to the same date. Later stations are compared with each state's March 2024 share of EVs, which assumes that share stayed roughly stable.
+- **Telangana** has no EV figure in the source table, so it is left out. **Sikkim** is recorded as "-" and treated as 0.
+- **EVs of all types are counted together.** Many two- and three-wheelers charge at home or swap batteries, so "EVs per public station" measures pressure on public charging, not total demand.
+- The 20,000-EV cut-off and the national benchmarks are simple choices. Different choices would change which states are labelled "priority gap".
 
-## 📊 Expected Outcomes
+## Next steps
 
-This project aims to provide a data-driven understanding of India's EV charging infrastructure landscape.
+- Add stations from all operators and update EV registrations to 2026.
+- Split EVs by vehicle type (two-wheelers, cars, buses).
+- Add highway corridors and population density.
 
-The analysis can help highlight:
+## Data and licence note
 
-- Regions where charging infrastructure may not be keeping pace with EV adoption.
-- Differences in charging infrastructure availability across states.
-- Potential opportunities for expanding charging networks.
-- The importance of balanced infrastructure development for sustainable mobility.
+The data comes from public Government of India documents (Press Information Bureau and the Ministry of Heavy Industries). Please check the reuse terms on those sites before redistributing.
 
-## 🌱 Real-World Relevance
+## Tools
 
-The transition towards electric mobility requires more than increasing EV production and sales. Accessible and strategically distributed charging infrastructure is equally important.
+Python (pandas, NumPy, matplotlib), SQLite, Tableau Public, Git and GitHub.
 
-Insights from this project can be useful for:
+## Author
 
-- EV infrastructure developers.
-- Electric vehicle manufacturers.
-- Government and urban planning authorities.
-- Sustainability researchers.
-- Data analysts and business intelligence professionals.
-
-## 🚀 Future Scope
-
-Potential improvements and extensions include:
-
-- Developing an interactive dashboard using Power BI or Tableau.
-- Incorporating updated EV registration and charging station datasets.
-- Performing state-wise and district-wise infrastructure comparisons.
-- Analysing charging station accessibility using geographical data.
-- Building predictive models to estimate future charging infrastructure requirements.
-- Exploring optimal locations for new EV charging stations.
-
-## 👩‍💻 Author
-
-**Mudra Berde**
-
-Data Science Student | Aspiring Data Analyst
-
-- GitHub: [@Mudra04](https://github.com/Mudra04)
-- Project Repository: [India EV Charging Gap Analysis](https://github.com/Mudra04/India-ev-charging-gap)
-
----
-
-⭐ If you find this project interesting, consider giving the repository a star!
-
-*Exploring data. Identifying gaps. Supporting smarter and more sustainable mobility in India.*
+**Mudra Berde**, final-year Data Science student. [LinkedIn](PASTE-YOUR-LINKEDIN-LINK-HERE) | [GitHub](https://github.com/Mudra04)
