@@ -134,4 +134,4 @@ Python (pandas, NumPy, matplotlib), SQLite, Tableau Public, Git and GitHub.
 
 ## Author
 
-**Mudra Berde**, final-year Data Science student. [LinkedIn](PASTE-YOUR-LINKEDIN-LINK-HERE) | [GitHub](https://github.com/Mudra04)
+**Mudra Berde**, final-year Data Science student. [LinkedIn](https://www.linkedin.com/in/mudra-berde-092703230/) | [GitHub](https://github.com/Mudra04)
