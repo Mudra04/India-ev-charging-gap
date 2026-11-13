@@ -52,4 +52,5 @@ Both came as tables inside government documents, so I transcribed them to CSV an
 
 Add stations from all operators, update EV registrations to 2026, split EVs by vehicle type, and add highway corridors and population density.
 
-**Links:** [Live dashboard](PASTE-YOUR-TABLEAU-PUBLIC-LINK-HERE) | [Code and notebooks](https://github.com/Mudra04/india-ev-charging-gap)
+**Links:** [Live dashboard](https://public.tableau.com/app/profile/mudra.berde/viz/IndiaEVChargingGap/Isthebuild-outcatchingup) | [Code and notebooks](https://github.com/Mudra04/india-ev-charging-gap)
+
